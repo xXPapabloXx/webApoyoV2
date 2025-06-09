@@ -1,9 +1,28 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 
-const NavBar = () => {
+const navItems = [
+  ['Inicio', 'home'],
+  ['Acerca', 'about'],
+  ['Contacto', 'contact'],
+]
+
+export default function NavBar({ onSelect }) {
   return (
-    <div>NavBar</div>
+    <nav className="w-1/1 flex flex-wrap gap-4 p-4 bg-slate-950 backdrop-blur-md">
+      {navItems.map(([label, key], index) => (
+        <motion.button
+          key={key}
+          onClick={() => onSelect(key)}
+          whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.3)' }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: index * 0.05 }}
+          className="text-sky-50 font-medium px-4 py-2"
+        >
+          {label}
+        </motion.button>
+      ))}
+    </nav>
   )
 }
-
-export default NavBar

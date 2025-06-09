@@ -5,7 +5,13 @@ const Home = () => {
   return (
     <>
       <div>Home</div>
-      <ModelRender modelPath="/models/montacarga.glb" width={600} height={400} />
+      <div style={{backgroundColor:"red", width:"100%"}}>
+        <ModelRender
+          modelPath="/models/montacargas.glb"
+          width={600}
+          height={400}
+        />
+      </div>
     </>
   );
 };
