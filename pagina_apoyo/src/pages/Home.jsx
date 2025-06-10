@@ -11,8 +11,17 @@ const Home = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
+        <div className="w-1/2 ">
+          <ModelRender
+            modelPath={"/models/Logo.glb"}
+            rotation={[0, -Math.PI / 2, 0]}
+            rotates={true}
+          />
+        </div>
         <h1 className="text-4xl font-bold mb-2">Apoyo Logístico ZF S.A.S</h1>
-        <p className="text-lg text-slate-300">Visualiza tu modelo 3D con estilo</p>
+        <p className="text-lg text-slate-300">
+          Proveedor de servicios logísticos
+        </p>
       </motion.div>
 
       <motion.div
@@ -21,7 +30,13 @@ const Home = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <ModelRender modelPath="/models/montacargas.glb" rotation={[0, Math.PI/4, 0]} rotates={false}/>
+        {
+          <ModelRender
+            modelPath="/models/montacargas.glb"
+            rotation={[0, Math.PI / 4, 0]}
+            rotates={false}
+          />
+        }
       </motion.div>
     </div>
   );

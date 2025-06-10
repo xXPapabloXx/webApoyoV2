@@ -7,9 +7,7 @@ const IsolatedModel = forwardRef(({ modelPath, ...props }, ref) => {
   const [cloned, setCloned] = useState(null);
 
   useEffect(() => {
-    const customManager = new LoadingManager();
-    const loader = new GLTFLoader(customManager);
-
+    const loader = new GLTFLoader();
     loader.load(
       modelPath,
       (gltf) => {
@@ -34,7 +32,12 @@ const IsolatedModel = forwardRef(({ modelPath, ...props }, ref) => {
 
   if (!cloned) return null;
 
-  return <primitive object={cloned} ref={ref} {...props} />;
+  return (
+    <group ref={ref}>
+      <primitive object={cloned} {...props} />
+    </group>
+  );
 });
+
 
 export default IsolatedModel;
