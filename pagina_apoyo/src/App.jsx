@@ -3,9 +3,13 @@ import './App.css'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
-import Services from './pages/Services'
+import NavBar from './components/template/NavBar'
+import Footer from './components/template/Footer'
+import LogServices from './pages/LogServices'
+import Confect from './pages/Confect'
+import Blog from './pages/Blog'
+
+
 
 
 function App() {
@@ -19,8 +23,12 @@ function App() {
         return <About />
       case 'contact':
         return <Contact />
-      case 'services':
-        return <Services />
+      case 'log_services':
+        return <LogServices />
+      case 'confect':
+        return <Confect />
+      case 'blog':
+        return <Blog />
       default:
         return <Home />
     }

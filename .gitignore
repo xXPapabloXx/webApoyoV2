@@ -1,1 +1,5 @@
-models/*
+models/*.blend
+models/*.blend1
+
+*.blend1
+*.blend

@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+./models/*.blend
+./models/*.blend1
+
+*.blend1
+*.blend
