@@ -15,10 +15,10 @@ const Home = () => {
         >
           <div className="w-1/2 ">
             <ModelRender
-              modelPath={"/models/Logo.glb"}
+              modelPath={"/models/Logo-draco.glb"}
               rotation={[0, -Math.PI / 2, 0]}
               rotates={true}
-              scale={[1.2, 1.2, 1.2]}
+              scale={[1.3, 1.3, 1.3]}
             />
           </div>
           <h1 className="text-4xl font-bold mb-2">Apoyo Logístico ZF S.A.S</h1>

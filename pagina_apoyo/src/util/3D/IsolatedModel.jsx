@@ -1,13 +1,19 @@
 import { useEffect, useMemo, useState, forwardRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { clone } from "three/examples/jsm/utils/SkeletonUtils";
-
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 const IsolatedModel = forwardRef(({ modelPath, ...props }, ref) => {
   const [cloned, setCloned] = useState(null);
 
   useEffect(() => {
     const loader = new GLTFLoader();
+
+    // DRACO SETUP
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/draco/");
+    loader.setDRACOLoader(dracoLoader);
+
     loader.load(
       modelPath,
       (gltf) => {
@@ -28,6 +34,10 @@ const IsolatedModel = forwardRef(({ modelPath, ...props }, ref) => {
         console.error("Error loading GLTF:", error);
       }
     );
+
+    return () => {
+      dracoLoader.dispose();
+    };
   }, [modelPath]);
 
   if (!cloned) return null;
@@ -38,6 +48,5 @@ const IsolatedModel = forwardRef(({ modelPath, ...props }, ref) => {
     </group>
   );
 });
-
 
 export default IsolatedModel;
