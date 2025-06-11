@@ -18,7 +18,7 @@ function App() {
   const renderView = () => {
     switch (currentView) {
       case 'home':
-        return <Home />
+        return <Home setCurrentView={setCurrentView}/>
       case 'about':
         return <About />
       case 'contact':
@@ -30,7 +30,7 @@ function App() {
       case 'blog':
         return <Blog />
       default:
-        return <Home />
+        return <Home setCurrentView={setCurrentView}/>
     }
   }
 
