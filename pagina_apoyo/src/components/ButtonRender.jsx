@@ -2,7 +2,7 @@ import React from "react";
 import ModelRender from "../util/3D/ModelRender";
 import { motion } from "framer-motion";
 
-const ButtonRender = ({ text, modelPath, rotation, rotates }) => {
+const ButtonRender = ({ text, modelPath, scale, rotation, rotates }) => {
   return (
     <>
       <motion.button
@@ -19,6 +19,7 @@ const ButtonRender = ({ text, modelPath, rotation, rotates }) => {
       >
         <div className="h-50">
           <ModelRender
+            scale={scale}
             modelPath={modelPath}
             rotation={rotation}
             rotates={rotates}

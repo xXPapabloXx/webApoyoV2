@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Bounds, Center } from "@react-three/drei";
 import IsolatedModel from "./IsolatedModel";
 
-function MouseReactiveModel({ modelPath, globalMouse, rotation }) {
+function MouseReactiveModel({ modelPath, globalMouse, rotation, scale }) {
   const modelRef = useRef();
   const baseRotation = useRef(rotation || [0, 0, 0]);
 
@@ -11,17 +11,25 @@ function MouseReactiveModel({ modelPath, globalMouse, rotation }) {
     if (modelRef.current) {
       const [baseX, baseY, baseZ] = baseRotation.current;
       modelRef.current.rotation.y +=
-        (baseY + globalMouse.current.x * 0.08 - modelRef.current.rotation.y) * 0.03;
+        (baseY + globalMouse.current.x * 0.08 - modelRef.current.rotation.y) *
+        0.03;
       modelRef.current.rotation.x +=
-        (baseX - globalMouse.current.y * 0.05 - modelRef.current.rotation.x) * 0.03;
+        (baseX - globalMouse.current.y * 0.05 - modelRef.current.rotation.x) *
+        0.03;
       modelRef.current.rotation.z = baseZ;
     }
   });
 
-  return <IsolatedModel ref={modelRef} modelPath={modelPath} />;
+  return (
+    <IsolatedModel
+      ref={modelRef}
+      modelPath={modelPath}
+      scale={scale || [1, 1, 1]}
+    />
+  );
 }
 
-export default function NoRotation({ modelPath, rotation }) {
+export default function NoRotation({ modelPath, rotation, scale }) {
   const globalMouse = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -47,6 +55,7 @@ export default function NoRotation({ modelPath, rotation }) {
                 modelPath={modelPath}
                 globalMouse={globalMouse}
                 rotation={rotation}
+                scale={scale}
               />
             </Center>
           </Bounds>

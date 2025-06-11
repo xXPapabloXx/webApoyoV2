@@ -9,8 +9,8 @@ const Home = () => {
       <div className="w-full h-96 bg-gradient-to-b from-stone-950 to-slate-700 grid grid-cols-2">
         <motion.div
           className="flex flex-col justify-center items-center text-white"
-          initial={{ opacity: 0}}
-          animate={{ opacity: 1}}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
           <div className="w-1/2 ">
@@ -18,6 +18,7 @@ const Home = () => {
               modelPath={"/models/Logo.glb"}
               rotation={[0, -Math.PI / 2, 0]}
               rotates={true}
+              scale={[1.2, 1.2, 1.2]}
             />
           </div>
           <h1 className="text-4xl font-bold mb-2">Apoyo Logístico ZF S.A.S</h1>
@@ -28,8 +29,8 @@ const Home = () => {
 
         <motion.div
           className="w-full h-full"
-          initial={{ opacity: 0}}
-          animate={{ opacity: 1}}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
           {
@@ -42,21 +43,22 @@ const Home = () => {
         </motion.div>
       </div>
       <motion.div
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-gradient-to-b from-slate-700 to-sky-950 grid grid-cols-3"
+        className="bg-gradient-to-b from-slate-700 to-sky-950 grid grid-cols-3 overflow-hidden"
       >
         <ButtonRender
           modelPath="/models/serv_log.glb"
-          rotation={[0, Math.PI/1.6, Math.PI/40]}
+          rotation={[0, Math.PI / 1.6, Math.PI / 40]}
           rotates={false}
           text={"Servicios Logísticos"}
         />
         <ButtonRender
-          modelPath="/models/montacargas.glb"
-          rotation={[0, Math.PI / 5, 0]}
+          modelPath="/models/sewings.glb"
+          rotation={[0, Math.PI * 0.1, Math.PI / 60]}
           rotates={false}
+          scale={[0.85, 0.85, 0.85]}
           text={"Confección"}
         />
         <ButtonRender
