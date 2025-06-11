@@ -15,9 +15,9 @@ const ButtonRender = ({ setCurrentView, view, text, modelPath, scale, rotation, 
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="overflow-x-hidden  items-center cursor-pointer"
+        className="overflow-x-hidden items-center cursor-pointer "
       >
-        <div className="h-50">
+        <div className="h-50 bg-radial from-white/15 to-slate-500/1 to-70%">
           <ModelRender
             scale={scale}
             modelPath={modelPath}

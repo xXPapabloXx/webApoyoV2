@@ -18,7 +18,7 @@ const Home = ({ setCurrentView }) => {
               modelPath={"/models/Logo-draco.glb"}
               rotation={[0, -Math.PI / 2, 0]}
               rotates={true}
-              scale={[1.3, 1.3, 1.3]}
+              scale={[1.5, 1.5, 1.5]}
             />
           </div>
           <h1 className="text-4xl font-bold mb-2">Apoyo Logístico ZF S.A.S</h1>
@@ -47,20 +47,20 @@ const Home = ({ setCurrentView }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         className="bg-gradient-to-b from-slate-700 to-sky-950 grid grid-cols-3 overflow-hidden"
-      >
+      >        
         <ButtonRender
           setCurrentView={setCurrentView}
           view={"log_services"}
           modelPath="/models/serv_log-draco.glb"
           rotation={[0, Math.PI / 1.6, Math.PI / 40]}
           rotates={false}
-          text={"Servicios Logísticos"}
+          text={"Servicios Logísticos"}          
         />
         <ButtonRender
           setCurrentView={setCurrentView}
           view={"confect"}
           modelPath="/models/sewings-draco.glb"
-          rotation={[0, Math.PI * 0.1, Math.PI * 0.016]}
+          rotation={[0, Math.PI * 0.18, Math.PI * 0.012]}
           rotates={false}
           scale={[0.85, 0.85, 0.85]}
           text={"Confección"}
