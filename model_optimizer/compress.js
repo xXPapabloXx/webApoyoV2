@@ -1,16 +1,16 @@
 import { NodeIO } from '@gltf-transform/core';
 import { draco } from '@gltf-transform/functions';
 
-// Crea una instancia del IO
+
 const io = new NodeIO();
 
-// Carga el modelo original
-const inputPath = '../pagina_apoyo/public/models/Logo.glb';
-const outputPath = '../pagina_apoyo/public/models/Logo-draco.glb';
+
+const inputPath = '../pagina_apoyo/public/models/serv_log.glb';
+const outputPath = '../pagina_apoyo/public/models/serv_log-draco.glb';
 
 const doc = await io.read(inputPath);
 
-// Aplica compresión Draco
+
 await doc.transform(
   draco()
 );

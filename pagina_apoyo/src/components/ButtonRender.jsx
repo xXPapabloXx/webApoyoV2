@@ -6,7 +6,7 @@ const ButtonRender = ({ text, modelPath, scale, rotation, rotates }) => {
   return (
     <>
       <motion.button
-        onClick={() => console.log("algo")}
+        
         whileHover={{
           scale: 1.04,
           backgroundColor: "rgba(200,200,200,0.3)",

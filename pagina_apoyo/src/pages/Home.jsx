@@ -35,7 +35,7 @@ const Home = () => {
         >
           {
             <ModelRender
-              modelPath="/models/montacarga.glb"
+              modelPath="/models/montacarga-draco.glb"
               rotation={[0, Math.PI / 4, 0]}
               rotates={false}
             />
@@ -49,13 +49,13 @@ const Home = () => {
         className="bg-gradient-to-b from-slate-700 to-sky-950 grid grid-cols-3 overflow-hidden"
       >
         <ButtonRender
-          modelPath="/models/serv_log.glb"
+          modelPath="/models/serv_log-draco.glb"
           rotation={[0, Math.PI / 1.6, Math.PI / 40]}
           rotates={false}
           text={"Servicios Logísticos"}
         />
         <ButtonRender
-          modelPath="/models/sewings.glb"
+          modelPath="/models/sewings-draco.glb"
           rotation={[0, Math.PI * 0.1, Math.PI / 60]}
           rotates={false}
           scale={[0.85, 0.85, 0.85]}
