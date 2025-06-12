@@ -23,7 +23,7 @@ export default function NavBar({ onSelect, currentView }) {
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: index * 0.05 }}
+          transition={{  duration: 0.25, delay: index * 0.01 }}
           className="text-sky-50 font-medium px-4 py-2 shadow shadow-cyan-500/60"
           style={{
             backgroundColor:

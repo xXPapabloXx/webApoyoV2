@@ -5,10 +5,10 @@ import Ware from "../components/logistics/ware/Ware";
 
 const LogServices = () => {
   return (
-   <>
+   <div className="grid grid-rows-2">
     <SubLogServices />
     <Ware />
-   </>
+   </div>
   );
 };
 

@@ -31,12 +31,12 @@ function renderComponent(key) {
 const SubLogServices = () => {
   let [selectedKey, setSelectedKey] = useState("rep");
   return (
-    <div className="w-full h-96 bg-gradient-to-b from-stone-950 to-slate-900 justify-center pt-3">
-      <h1 className="text-3xl text-white w-1/3 ml-auto mr-auto text-center shadow shadow-emerald-600 pb-1 mb-2">
+    <div className="w-full bg-gradient-to-b from-stone-950 to-slate-900 justify-center pt-3">
+      <h1 className="text-3xl text-white w-1/3 ml-auto mr-auto text-center shadow shadow-emerald-600 pb-1 mb-2 font-bold">
         Servicios Logísticos
       </h1>
-      <div className="grid grid-rows-2">
-        <div className="flex flex-wrap justify-center">
+      
+        <div className="flex flex-wrap justify-center mb-2">
           {logItems.map(([label, key], index) => (
             <motion.button
               key={key}
@@ -48,7 +48,7 @@ const SubLogServices = () => {
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
+              transition={{ duration: 0.25, delay: index * 0.01 }}
               className="text-sky-50 font-medium px-4 py-2 shadow shadow-emerald-700"
               style={{
                 backgroundColor:
@@ -61,8 +61,8 @@ const SubLogServices = () => {
             </motion.button>
           ))}
         </div>
-        <div className="text-white">{renderComponent(selectedKey)}</div>
-      </div>
+        <div className="text-white max-w-3xl mx-auto overflow-y-hidden">{renderComponent(selectedKey)}</div>
+      
     </div>
   );
 };
