@@ -1,9 +1,15 @@
-import React from 'react'
+
+import SubLogServices from "../components/logistics/log_serv/SubLogServices";
+import Ware from "../components/logistics/ware/Ware";
+
 
 const LogServices = () => {
   return (
-    <div>LogServices</div>
-  )
-}
+   <>
+    <SubLogServices />
+    <Ware />
+   </>
+  );
+};
 
-export default LogServices
+export default LogServices;

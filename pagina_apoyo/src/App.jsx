@@ -9,11 +9,8 @@ import LogServices from './pages/LogServices'
 import Confect from './pages/Confect'
 import Blog from './pages/Blog'
 
-
-
-
 function App() {
-  const [currentView, setCurrentView] = useState('home')
+  const [currentView, setCurrentView] = useState('log_services')
 
   const renderView = () => {
     switch (currentView) {
@@ -36,7 +33,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <NavBar onSelect={setCurrentView} />
+      <NavBar onSelect={setCurrentView} currentView={currentView}/>
       <div>
         {renderView()}
       </div>
