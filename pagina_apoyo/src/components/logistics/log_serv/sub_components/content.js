@@ -2,7 +2,7 @@ const content = {
   recepcion: {
     title: "Recepción / Despacho de mercancía",
     text: "Gestionamos la llegada/salida de productos, verificando su integridad, y registrando el ingreso/salida al sistema logístico.",
-    routes: ["recepcion/rec2", "recepcion/rec3", "recepcion/rec4"],
+    routes: ["recepcion/rec1", "recepcion/rec3", "recepcion/rec4"],
   },
   almacenamiento: {
     title: "Almacenamiento",

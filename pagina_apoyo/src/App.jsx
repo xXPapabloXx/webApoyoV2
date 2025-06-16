@@ -10,7 +10,7 @@ import Confect from "./pages/Confect";
 import Blog from "./pages/Blog";
 
 function App() {
-  const [currentView, setCurrentView] = useState("log_services");
+  const [currentView, setCurrentView] = useState("contact");
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentView]);

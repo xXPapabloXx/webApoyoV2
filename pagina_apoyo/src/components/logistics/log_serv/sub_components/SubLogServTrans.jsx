@@ -11,7 +11,12 @@ const SubLogServTrans = ({ contenido }) => {
   const closeModal = () => setSelectedImage(null);
 
   return (
-    <div className="text-white rounded-xl shadow-md p-6 mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25 }}
+      className="text-white rounded-xl shadow-md p-6 mx-auto"
+    >
       <h2 className="text-xl font-bold mb-4 text-center shadow shadow-amber-300/60 w-1/2 mx-auto">
         {contenido.title}
       </h2>
@@ -24,6 +29,9 @@ const SubLogServTrans = ({ contenido }) => {
             key={route}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
             className="shadow-md shadow-amber-300/80 cursor-pointer rounded-xl overflow-hidden"
             onClick={() => handleClick(route)}
           >
@@ -66,7 +74,7 @@ const SubLogServTrans = ({ contenido }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
