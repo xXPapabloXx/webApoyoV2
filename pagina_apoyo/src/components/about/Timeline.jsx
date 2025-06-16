@@ -21,7 +21,7 @@ const timelineData = [
 
 export default function Timeline() {
   return (
-    <div className="relative bg-gradient-to-b from-stone-950 to-slate-900 text-white py-20 px-4 md:px-16">
+    <div className="relative bg-gradient-to-b from-stone-950 to-slate-900 text-white pt-10 px-4 md:px-16">
       <div className="w-full text-4xl mb-8 text-center font-bold">
         Nuestra Historia
       </div>
