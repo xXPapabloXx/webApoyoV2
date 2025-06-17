@@ -16,7 +16,7 @@ const CurrentNorm = () => {
             }
           />
         </div>
-        <div className="w-full sm:w-2/3 h-80 mt-4">
+        <div className="w-full sm:w-2/3 h-80 mb-4">
           <ButonRenderLink
             text={"RESOLUCIÓN 2109 DE 2019"}
             url={

@@ -24,7 +24,7 @@ const ButtonRender = ({
       transition={{ duration: 0.3 }}
       className="overflow-x-hidden items-center cursor-pointer "
     >
-      <div className="h-50 bg-radial from-white/15 to-slate-500/1 to-70%">
+      <div className="h-50 bg-radial to-70%">
         <ModelRender
           scale={scale}
           modelPath={modelPath}

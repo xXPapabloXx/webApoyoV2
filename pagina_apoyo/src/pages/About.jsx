@@ -4,7 +4,7 @@ import Events from "../components/about/Events";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-stone-950 to-slate-900">
+    <div className="bg-gradient-to-b from-stone-950 to-slate-800">
       <Timeline />
       <Events />
     </div>

@@ -8,7 +8,7 @@ const Buttons = ({ setCurrentView }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="bg-gradient-to-b from-slate-700 to-sky-950 grid grid-cols-3 overflow-hidden"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-8 py-6"
     >
       <ButtonRender
         setCurrentView={setCurrentView}
