@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <div className="bg-gradient-to-b from-stone-950 to-slate-800 text-white py-12 px-4 md:px-16">
-      <h2 className="w-1/3 text-4xl font-bold mb-12 text-center mx-auto shadow shadow-purple-500">
+      <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center mx-auto w-full md:w-1/3 shadow shadow-purple-500 p-2 rounded-md">
         Contáctanos
       </h2>
 
-      <div className="grid mt-5 md:grid-cols-2 gap-10 items-start pb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start pb-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full h-full overflow-hidden shadow-md shadow-emerald-500"
+          className="w-full h-72 md:h-full shadow-md shadow-emerald-500 rounded-lg overflow-hidden"
         >
           <iframe
             title="Ubicación ALogísticos"
@@ -27,12 +27,12 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          className="text-gray-200  p-6 shadow shadow-amber-300/70"
+          className="text-gray-200 p-4 md:p-6 shadow shadow-amber-300/70 rounded-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-2xl font-bold mb-4 border-b border-b-amber-200">
+          <h3 className="text-xl md:text-2xl font-bold mb-4 border-b border-b-amber-200 pb-1">
             Información
           </h3>
           <ul className="space-y-3 text-sm md:text-base">

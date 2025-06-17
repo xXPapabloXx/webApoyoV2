@@ -1,50 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const simples = [
-  "Clasificación de producto por diseño",
-  "Inventario inicial de la mercancía",
-  "Inventario final por caja",
-  "Separación de segundas",
-];
-
-const desplegables = [
-  {
-    titulo: "Procesos internos",
-    key: "internos",
-    subtareas: [
-      "Pre-inspección (en caso necesario)",
-      "Des-marquillar, Re-marquillar",
-      "Doblar",
-      "Empacar",
-    ],
-  },
-  {
-    titulo: "Etiquetado y marquillas",
-    key: "etiquetas",
-    subtareas: [
-      "Líneas de producción de etiquetas",
-      "Ropa infantil, adultos",
-      "Accesorios",
-      "Ropa interior",
-      "Calzado",
-      "Juguetería",
-      "Bisutería",
-      "Grado alimenticio",
-    ],
-  },
-];
+import { simples, desplegables } from "./content";
 
 export default function LogisticWare() {
   const [selectedKey, setSelectedKey] = useState("internos");
 
   return (
-    <div className="w-full justify-center pb-10 mt-2 text-white">
-      <h1 className="text-3xl text-white w-1/3 mx-auto text-center shadow shadow-purple-500 pb-2 mb-4 font-bold">
+    <div className="w-full pt-6 pb-10 px-4 text-white">
+      <h1 className="text-2xl md:text-3xl text-center mx-auto mb-6 p-2 shadow shadow-purple-500 font-bold rounded-md w-full md:w-1/2">
         Manejo de mercancía
       </h1>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Panel izquierdo */}
         <div className="shadow shadow-purple-500 p-4 rounded-lg h-fit">
           <h2 className="text-center text-lg font-semibold pb-2 mb-4 shadow shadow-purple-500">
@@ -54,7 +21,7 @@ export default function LogisticWare() {
             {simples.map((item, i) => (
               <li
                 key={i}
-                className="px-3 py-2 border shadow shadow-purple-600 rounded"
+                className="px-3 py-2 border shadow shadow-purple-600 rounded text-sm md:text-base"
               >
                 {item}
               </li>
@@ -62,7 +29,8 @@ export default function LogisticWare() {
           </ul>
         </div>
 
-        <div className="md:col-span-2 shadow shadow-purple-500 p-4 rounded-lg flex flex-col gap-4 h-73">
+        {/* Panel derecho */}
+        <div className="md:col-span-2 shadow shadow-purple-500 p-4 rounded-lg flex flex-col gap-4 h-fit">
           <div className="flex flex-wrap justify-center gap-2">
             {desplegables.map(({ titulo, key }, index) => (
               <motion.button
@@ -73,10 +41,10 @@ export default function LogisticWare() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25, delay: index * 0.02 }}
-                className={`font-medium px-4 py-2 shadow shadow-purple-400 border rounded ${
+                className={`text-sm md:text-base font-medium px-4 py-2 shadow shadow-purple-400 border rounded transition-colors duration-200 ${
                   selectedKey === key
                     ? "bg-purple-500/60 border-purple-600"
-                    : " border-purple-300"
+                    : "bg-transparent border-purple-300 hover:bg-purple-300/10"
                 }`}
               >
                 {titulo}
@@ -99,7 +67,7 @@ export default function LogisticWare() {
                   .subtareas.map((item, i) => (
                     <div
                       key={i}
-                      className="px-4 py-2 border shadow shadow-purple-400 rounded"
+                      className="px-4 py-2 border shadow shadow-purple-400 rounded text-sm md:text-base"
                     >
                       {item}
                     </div>

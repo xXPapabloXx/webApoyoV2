@@ -3,10 +3,12 @@ import ButonRenderLink from './ButonRenderLink';
 
 const CurrentNorm = () => {
   return (
-    <div className=" pt-3 pb-3">
-      <h1 className="text-white text-2xl text-center mb-6 mt-3 p-2 w-1/3 mx-auto shadow shadow-purple-500">Normatividad Actual</h1>
-      <div className="grid grid-cols-2 h-96 ">
-        <div className="w-2/3 h-80 mx-auto">
+    <div className="pt-6 pb-10 px-4 md:px-8">
+      <h1 className="text-white text-2xl md:text-3xl text-center mb-8 p-2 w-full md:w-1/3 mx-auto shadow shadow-purple-500 rounded-md">
+        Normatividad Actual
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
+        <div className="w-full sm:w-2/3 h-80 mb-4">
           <ButonRenderLink
             text={"RESOLUCIÓN 2107 DE 2019"}
             url={
@@ -14,7 +16,7 @@ const CurrentNorm = () => {
             }
           />
         </div>
-        <div className="w-2/3 h-80 mx-auto">
+        <div className="w-full sm:w-2/3 h-80 mt-4">
           <ButonRenderLink
             text={"RESOLUCIÓN 2109 DE 2019"}
             url={
@@ -25,6 +27,6 @@ const CurrentNorm = () => {
       </div>
     </div>
   );
-}
+};
 
 export default CurrentNorm;
