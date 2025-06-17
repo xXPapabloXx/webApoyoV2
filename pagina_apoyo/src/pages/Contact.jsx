@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <div className="bg-gradient-to-b from-stone-950 to-slate-800 text-white py-12 px-4 md:px-16">
-      <h2 className="w-1/3 text-4xl font-bold mb-12 text-center mx-auto shadow shadow-purple-500">Contáctanos</h2>
+      <h2 className="w-1/3 text-4xl font-bold mb-12 text-center mx-auto shadow shadow-purple-500">
+        Contáctanos
+      </h2>
 
       <div className="grid mt-5 md:grid-cols-2 gap-10 items-start pb-6">
         <motion.div
@@ -30,7 +32,9 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-2xl font-bold mb-4 border-b border-b-amber-200">Información</h3>
+          <h3 className="text-2xl font-bold mb-4 border-b border-b-amber-200">
+            Información
+          </h3>
           <ul className="space-y-3 text-sm md:text-base">
             <li>
               <span className="font-semibold">Horario de atención:</span>
