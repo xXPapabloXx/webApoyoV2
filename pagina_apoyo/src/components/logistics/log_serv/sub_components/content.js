@@ -11,7 +11,7 @@ const content = {
   },
   transporte: {
     title: "Transporte",
-    text: "Desplazamiento seguro y eficiente de mercancías a nivel regional, respaldado por un sistema GPS",
+    text: "Desplazamiento seguro y eficiente de mercancías a nivel regional, respaldado por un sistema GPS.",
     routes: ["transporte/tte1", "transporte/tt2", "transporte/tte3"],
   },
 };
