@@ -21,12 +21,12 @@ const timelineData = [
 
 export default function Timeline() {
   return (
-    <div className="relative bg-gradient-to-b from-stone-950 to-slate-900 text-white pt-10 px-4 md:px-16">
-      <div className="w-full text-4xl mb-8 text-center font-bold">
+    <div className="relative bg-gradient-to-b from-stone-950 to-slate-900 text-white pt-10 px-4 md:px-16 pb-4">
+      <div className="w-1/2 text-4xl mb-8 text-center mx-auto font-bold shadow shadow-purple-500">
         Nuestra Historia
       </div>
 
-      <div className="flex flex-col gap-20 relative z-10">
+      <div className="flex flex-col gap-15 relative z-10">
         {timelineData.map(({ year, text }, index) => {
           const alignLeft = index % 2 === 0;
           return (

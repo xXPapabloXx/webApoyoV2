@@ -14,7 +14,7 @@ const Landing = () => {
         <div className="w-1/2 ">
           <ModelRender
             modelPath={"/models/Logo-draco.glb"}
-            rotation={[0, -Math.PI / 2, 0]}
+            rotation={[0, -Math.PI/2 , 0]}
             rotates={true}
             scale={[1.5, 1.5, 1.5]}
           />

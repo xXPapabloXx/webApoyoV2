@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Bounds, Center, OrbitControls } from "@react-three/drei";
 import IsolatedModel from "./IsolatedModel";
 
-function RotatingModel({ modelPath, scale }) {
+function RotatingModel({ modelPath, scale, rotation }) {
   const modelRef = useRef();
   useFrame(({ clock }) => {
     if (modelRef.current) {
@@ -15,13 +15,13 @@ function RotatingModel({ modelPath, scale }) {
     <IsolatedModel
       ref={modelRef}
       modelPath={modelPath}
-      rotation={[0,-Math.PI/2,0]}
+      rotation={rotation || [0, 0, 0]}
       scale={scale || [1, 1, 1]}
     />
   );
 }
 
-export default function Rotation({ modelPath, scale }) {
+export default function Rotation({ modelPath, scale, rotation }) {
   return (
     <div className="m-0 w-full h-full">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
@@ -31,7 +31,7 @@ export default function Rotation({ modelPath, scale }) {
           <directionalLight position={[0, 1, 1.5]} intensity={4.0} />
           <Bounds fit clip margin={1.2}>
             <Center>
-              <RotatingModel modelPath={modelPath} scale={scale} />
+              <RotatingModel modelPath={modelPath} scale={scale} rotation={rotation} />
             </Center>
           </Bounds>
         </Suspense>
