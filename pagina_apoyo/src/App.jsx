@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { AnimatePresence, motion } from "framer-motion";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -11,6 +13,7 @@ import Blog from "./pages/Blog";
 
 function App() {
   const [currentView, setCurrentView] = useState("home");
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentView]);
@@ -18,26 +21,37 @@ function App() {
   const renderView = () => {
     switch (currentView) {
       case "home":
-        return <Home setCurrentView={setCurrentView} />;
+        return <Home setCurrentView={setCurrentView} key="home" />;
       case "about":
-        return <About />;
+        return <About key="about" />;
       case "contact":
-        return <Contact />;
+        return <Contact key="contact" />;
       case "log_services":
-        return <LogServices />;
+        return <LogServices key="log_services" />;
       case "confect":
-        return <Confect />;
+        return <Confect key="confect" />;
       case "blog":
-        return <Blog />;
+        return <Blog key="blog" />;
       default:
-        return <Home setCurrentView={setCurrentView} />;
+        return <Home setCurrentView={setCurrentView} key="default" />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-stone-950 to-slate-800 ">
       <NavBar onSelect={setCurrentView} currentView={currentView} />
-      <div>{renderView()}</div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentView}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+        >
+          {renderView()}
+        </motion.div>
+      </AnimatePresence>
+
       <Footer />
     </div>
   );

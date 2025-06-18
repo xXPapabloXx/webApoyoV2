@@ -63,7 +63,7 @@ const Events = () => {
             onClick={() => handleClick(img)}
           >
             <img
-              key={idx}
+              key={img.src}
               src={img.src}
               alt={img.alt}
               className="rounded-lg shadow-md hover:scale-105 transition-transform w-full h-48 object-cover"
