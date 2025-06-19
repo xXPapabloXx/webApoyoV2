@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="bg-gradient-to-b from-stone-950 to-slate-800 text-white py-12 px-4 md:px-16">
+    <div className="bg-gradient-to-b text-white py-12 px-4 md:px-16">
       <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center mx-auto w-full md:w-1/3 shadow shadow-purple-500 p-2 rounded-md">
         Contáctanos
       </h2>

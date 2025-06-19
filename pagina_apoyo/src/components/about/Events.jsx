@@ -20,7 +20,7 @@ const Events = () => {
       : imagenes[categoria];
 
   return (
-    <div className="mt-6 text-white px-4 sm:px-6 md:px-10">
+    <div className="mt-6 text-white px-4 sm:px-6 md:px-10 ">
       <h1 className="mt-5 text-2xl md:text-3xl text-white text-center mb-6 pb-2 shadow shadow-emerald-400 w-full md:w-1/3 mx-auto rounded">
         Actividades
       </h1>
@@ -50,26 +50,28 @@ const Events = () => {
       </div>
 
       {/* Galería */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 pb-8">
-        {imagenesFiltradas.map((img, idx) => (
-          <motion.button
-            key={img.src}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25 }}
-            className="shadow-md shadow-emerald-600/80 cursor-pointer rounded-xl overflow-hidden"
-            onClick={() => handleClick(img)}
-          >
-            <img
+      <div className="h-96 overflow-y-scroll overflow-x-hidden rounded-2xl mb-5 custom-scroll">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 pb-8 ">
+          {imagenesFiltradas.map((img, idx) => (
+            <motion.button
               key={img.src}
-              src={img.src}
-              alt={img.alt}
-              className="rounded-lg shadow-md hover:scale-105 transition-transform w-full h-48 object-cover"
-            />
-          </motion.button>
-        ))}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25 }}
+              className="shadow-md shadow-emerald-600/80 cursor-pointer rounded-xl overflow-hidden"
+              onClick={() => handleClick(img)}
+            >
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                className="rounded-lg shadow-md hover:scale-105 transition-transform w-full h-48 object-cover"
+              />
+            </motion.button>
+          ))}
+        </div>
       </div>
 
       {/* Modal */}

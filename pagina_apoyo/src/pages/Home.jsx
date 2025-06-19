@@ -6,7 +6,7 @@ import Buttons from "../components/home/Buttons";
 const Home = ({ setCurrentView }) => {
   return (
     <motion.div
-      className="flex flex-col bg-gradient-to-b from-stone-950 to-slate-800 min-h-screen"
+      className="flex flex-col min-h-screen"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}

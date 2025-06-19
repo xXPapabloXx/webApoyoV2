@@ -5,8 +5,8 @@ import { draco } from '@gltf-transform/functions';
 const io = new NodeIO();
 
 
-const inputPath = '../models/cert/cert.glb';
-const outputPath = '../pagina_apoyo/public/models/Certificate-draco.glb';
+const inputPath = '../models/mannequin/mannequin2.glb';
+const outputPath = '../pagina_apoyo/public/models/Mannequin-draco2.glb';
 
 const doc = await io.read(inputPath);
 
