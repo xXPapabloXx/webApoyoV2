@@ -27,12 +27,28 @@ export const clothingOptions = {
   ],
   prendas_inferiores: [
     {
-      id: "pantalon",
-      label: "Pantalón",
-      modelPath: "/models/clothes/pantalon.glb",
-      position: [0, 0.5, 0],
+      id: "sudadera",
+      label: "Sudadera",
+      modelPath: "/models/clothes/Sudadera-draco.glb",
+      position: [0, 0, 0],
       rotation: [0, 0, 0],
-      scale: [1.1, 1.1, 1.1],
+      scale: [1, 1, 1],
+    },
+    {
+      id: "pantaloneta",
+      label: "Pantaloneta",
+      modelPath: "/models/clothes/Pantaloneta-draco.glb",
+      position: [0, 0, 0],
+      rotation: [0, 0, 0],
+      scale: [1, 1, 1],
+    },
+    {
+      id: "jogger",
+      label: "Jogger",
+      modelPath: "/models/clothes/Jogger-draco.glb",
+      position: [0, 0, 0],
+      rotation: [0, 0, 0],
+      scale: [1, 1, 1],
     },
   ],
   vestidos_de_bano: [

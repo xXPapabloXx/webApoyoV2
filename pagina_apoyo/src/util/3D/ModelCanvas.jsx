@@ -10,11 +10,24 @@ const Mannequin = () => {
   return <primitive object={scene} />;
 };
 
-const ClothingItem = ({ model }) => {
+const ClothingItem = ({ model, color }) => {
   const { scene } = useGLTF(model.modelPath);
+  const clothingRef = useRef();
+
+  useEffect(() => {
+    if (clothingRef.current && color) {
+      clothingRef.current.traverse((child) => {
+        if (child.isMesh) {
+          child.material.color.set(color);
+          child.material.needsUpdate = true;
+        }
+      });
+    }
+  }, [color]);
 
   return (
     <primitive
+      ref={clothingRef}
       object={scene}
       position={model.position}
       rotation={model.rotation}
@@ -31,13 +44,13 @@ const CameraController = ({ category }) => {
   useEffect(() => {
     const cameraPositions = {
       prendas_superiores: new Vector3(0, 2, 3),
-      prendas_inferiores: new Vector3(0, -2, 3),
+      prendas_inferiores: new Vector3(0, 1, 4),
       vestidos_de_bano: new Vector3(0, 1.5, 2.5),
     };
 
     const lookAtTargets = {
       prendas_superiores: new Vector3(0, 15, 0),
-      prendas_inferiores: new Vector3(0, -15, 0),
+      prendas_inferiores: new Vector3(0, -10, 0),
       vestidos_de_bano: new Vector3(0, 15, 0),
     };
 
@@ -47,10 +60,8 @@ const CameraController = ({ category }) => {
   }, [category]);
 
   useFrame(() => {
-    
     camera.position.lerp(targetPositionRef.current, 0.02);
 
-    
     const currentLookAt = new Vector3().lerp(targetLookAtRef.current, 0.05);
     camera.lookAt(currentLookAt);
   });
@@ -58,7 +69,7 @@ const CameraController = ({ category }) => {
   return null;
 };
 
-const ModelCanvas = ({ selectedModel, category }) => {
+const ModelCanvas = ({ selectedModel, category, color }) => {
   return (
     <div className="w-full h-full">
       <Canvas camera={{ position: [0, 2, 8], fov: 45 }}>
@@ -69,7 +80,7 @@ const ModelCanvas = ({ selectedModel, category }) => {
         <Suspense fallback={null}>
           <CameraController category={category} />
           <Mannequin />
-          {selectedModel && <ClothingItem model={selectedModel} />}
+          {selectedModel && <ClothingItem model={selectedModel} color={color} />}
         </Suspense>
       </Canvas>
     </div>

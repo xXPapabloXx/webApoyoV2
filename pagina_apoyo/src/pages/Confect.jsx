@@ -4,9 +4,9 @@ import { clothingOptions } from "../components/confect/clothingOptions";
 import ModelCanvas from "../util/3D/ModelCanvas";
 
 const Confect = () => {
-  const [selectedCategory, setSelectedCategory] =
-    useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedModelId, setSelectedModelId] = useState(null);
+  const [selectedColor, setSelectedColor] = useState("#ffffff");
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -44,6 +44,17 @@ const Confect = () => {
             {catKey.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())}
           </motion.button>
         ))}
+        {selectedModel && (
+          <div className="flex flex-col items-center mt-4">
+            <label className="text-sm mb-1">Color</label>
+            <input
+              type="color"
+              value={selectedColor}
+              onChange={(e) => setSelectedColor(e.target.value)}
+              className="w-20 h-10 rounded-md border"
+            />
+          </div>
+        )}
       </div>
 
       {/* Centro: modelo base + modelo seleccionado */}
@@ -51,6 +62,7 @@ const Confect = () => {
         <ModelCanvas
           selectedModel={selectedModel}
           category={selectedCategory}
+          color={selectedColor}
         />
       </div>
 
