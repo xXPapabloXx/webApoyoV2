@@ -18,7 +18,6 @@ export default function NavBar({ onSelect, currentView }) {
           onClick={() => onSelect(key)}
           whileHover={{
             scale: 1.1,
-            backgroundColor: "rgba(37, 193, 206, 0.3)",
           }}
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: -10 }}

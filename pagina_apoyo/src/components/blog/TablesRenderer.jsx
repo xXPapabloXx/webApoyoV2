@@ -24,7 +24,7 @@ const TablesRenderer = () => {
 
   return (
     <motion.div
-      className="w-full pt-6 px-4 md:px-8"
+      className="w-full mt-6 pt-6 px-4 md:px-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -40,8 +40,7 @@ const TablesRenderer = () => {
             key={key}
             onClick={() => setSelectedKey(key)}
             whileHover={{
-              scale: 1.1,
-              backgroundColor: "rgba(27, 240, 141, 0.3)",
+              scale: 1.1
             }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -10 }}

@@ -36,8 +36,7 @@ const SubLogServices = () => {
             key={key}
             onClick={() => setSelectedKey(key)}
             whileHover={{
-              scale: 1.1,
-              backgroundColor: "rgba(216, 227, 29, 0.3)",
+              scale: 1.1
             }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -10 }}

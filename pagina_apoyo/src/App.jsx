@@ -12,7 +12,7 @@ import Confect from "./pages/Confect";
 import Blog from "./pages/Blog";
 
 function App() {
-  const [currentView, setCurrentView] = useState("confect");
+  const [currentView, setCurrentView] = useState("home");
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
