@@ -1,6 +1,42 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { simples, desplegables } from "./content";
+import ItemCard from "./ItemCard";
+import {
+  Tag,
+  ClipboardCheck,
+  Box,
+  Package,
+  SearchCheck,
+  Replace,
+  Layers,
+  PackageCheck,
+  Printer,
+  Shirt,
+  Gem,
+  Sparkles,
+  Utensils,
+  Footprints,
+  Puzzle,
+} from "lucide-react";
+
+const iconMap = {
+  Tag,
+  ClipboardCheck,
+  Box,
+  Package,
+  SearchCheck,
+  Replace,
+  Layers,
+  PackageCheck,
+  Printer,
+  Shirt,
+  Gem,
+  Sparkles,
+  Utensils,
+  Footprints,
+  Puzzle,
+};
 
 export default function LogisticWare() {
   const [selectedKey, setSelectedKey] = useState("internos");
@@ -17,20 +53,23 @@ export default function LogisticWare() {
           <h2 className="text-center text-lg font-semibold pb-2 mb-4 shadow shadow-purple-500">
             Procesos generales
           </h2>
-          <ul className="space-y-2">
+          <div className="space-y-3">
             {simples.map((item, i) => (
-              <li
+              <ItemCard
                 key={i}
-                className="px-3 py-2 border shadow shadow-purple-600 rounded text-sm md:text-base"
-              >
-                {item}
-              </li>
+                title={item.titulo}
+                description={item.descripcion}
+                IconComponent={iconMap[item.icon]}
+              />
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* Panel derecho */}
         <div className="md:col-span-2 shadow shadow-purple-500 p-4 rounded-lg flex flex-col gap-4 h-fit">
+          <h2 className="text-center text-lg font-semibold pb-2 mb-4 shadow shadow-purple-500">
+            Procesos específicos
+          </h2>
           <div className="flex flex-wrap justify-center gap-2">
             {desplegables.map(({ titulo, key }, index) => (
               <motion.button
@@ -51,29 +90,17 @@ export default function LogisticWare() {
               </motion.button>
             ))}
           </div>
-
-          <div className="h-fit">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedKey}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-3"
-              >
-                {desplegables
-                  .find((d) => d.key === selectedKey)
-                  .subtareas.map((item, i) => (
-                    <div
-                      key={i}
-                      className="px-4 py-2 border shadow shadow-purple-400 rounded text-sm md:text-base"
-                    >
-                      {item}
-                    </div>
-                  ))}
-              </motion.div>
-            </AnimatePresence>
+          <div className="flex flex-wrap justify-center gap-2">
+            {desplegables
+              .find((d) => d.key === selectedKey)
+              .subtareas.map((item, i) => (
+                <ItemCard
+                  key={i}
+                  title={item.titulo}
+                  description={item.descripcion}
+                  IconComponent={iconMap[item.icon]}
+                />
+              ))}
           </div>
         </div>
       </div>

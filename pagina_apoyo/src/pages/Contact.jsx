@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="bg-gradient-to-b text-white py-12 px-4 md:px-16">
-      <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center mx-auto w-full md:w-1/3 shadow shadow-purple-500 p-2 rounded-md">
+    <div className="bg-gradient-to-b text-white py-12 px-4 md:px-16 xl:px-32 2xl:px-60 min-h-[700px]">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center mx-auto w-11/12 sm:w-3/4 md:w-1/3 shadow shadow-purple-500 p-2 rounded-md">
         Contáctanos
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start pb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start pb-6 max-w-[1600px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full h-72 md:h-full shadow-md shadow-emerald-500 rounded-lg overflow-hidden"
+          className="w-full h-72 sm:h-96 md:h-full shadow-md shadow-emerald-500 rounded-lg overflow-hidden"
         >
           <iframe
             title="Ubicación ALogísticos"
@@ -27,15 +27,15 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          className="text-gray-200 p-4 md:p-6 shadow shadow-amber-300/70 rounded-lg"
+          className="text-gray-200 p-4 sm:p-6 shadow shadow-amber-300/70 rounded-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-xl md:text-2xl font-bold mb-4 border-b border-b-amber-200 pb-1">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 border-b border-b-amber-200 pb-1">
             Información
           </h3>
-          <ul className="space-y-3 text-sm md:text-base">
+          <ul className="space-y-3 text-sm sm:text-base xl:text-lg">
             <li>
               <span className="font-semibold">Horario de atención:</span>
               <br />
