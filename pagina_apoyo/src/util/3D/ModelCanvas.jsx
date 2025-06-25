@@ -2,9 +2,8 @@ import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import CameraController from "./CameraControler";
-import Loader from "../../components/Loader";
 
-const mannequinPath = "/models/Mannequin-draco.glb";
+import mannequinPath from "../../assets/models/Mannequin-draco.glb";
 
 const Mannequin = () => {
   const { scene } = useGLTF(mannequinPath);

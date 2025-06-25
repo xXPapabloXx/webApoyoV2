@@ -1,43 +1,20 @@
-export const imagenes = {
-  navidad: [
-    { src: "/images/catalog/xmas/1.jpg", alt: "Navidad 1" },
-    { src: "/images/catalog/xmas/2.jpg", alt: "Navidad 2" },
-    { src: "/images/catalog/xmas/3.jpg", alt: "Navidad 3" },
-    { src: "/images/catalog/xmas/4.jpg", alt: "Navidad 4" },
-    { src: "/images/catalog/xmas/5.jfif", alt: "Navidad 5" },
-    { src: "/images/catalog/xmas/6.jfif", alt: "Navidad 6" },
-    { src: "/images/catalog/xmas/7.jfif", alt: "Navidad 7" },
-    { src: "/images/catalog/xmas/8.jfif", alt: "Navidad 8" },
-    { src: "/images/catalog/xmas/9.jfif", alt: "Navidad 9" },
-  ],
-  halloween: [
-    { src: "/images/catalog/halloween/1.jfif", alt: "Halloween 1" },
-    { src: "/images/catalog/halloween/2.jfif", alt: "Halloween 2" },
-    { src: "/images/catalog/halloween/3.jfif", alt: "Halloween 3" },
-    { src: "/images/catalog/halloween/4.jfif", alt: "Halloween 4" },
-    { src: "/images/catalog/halloween/5.jfif", alt: "Halloween 5" },
-    { src: "/images/catalog/halloween/6.jfif", alt: "Halloween 6" },
-    { src: "/images/catalog/halloween/7.jpg", alt: "Halloween 7" },
-    { src: "/images/catalog/halloween/8.jpg", alt: "Halloween 8" },
-  ],
-  salud: [
-    { src: "/images/catalog/health/1.jpg", alt: "Salud 1" },
-    { src: "/images/catalog/health/2.jpg", alt: "Salud 2" },
-    { src: "/images/catalog/health/3.jpg", alt: "Salud 3" },
-    { src: "/images/catalog/health/4.jpg", alt: "Salud 4" },
-    { src: "/images/catalog/health/5.jpg", alt: "Salud 5" },    
-  ],
-  trabajo: [
-    { src: "/images/catalog/work/1.jpg", alt: "Trabajo 1" },
-    { src: "/images/catalog/work/2.jpg", alt: "Trabajo 2" },
-    { src: "/images/catalog/work/3.jpg", alt: "Trabajo 3" },
-    { src: "/images/catalog/work/4.jpg", alt: "Trabajo 4" },
-    { src: "/images/catalog/work/5.jpg", alt: "Trabajo 5" },
-    { src: "/images/catalog/work/6.jpg", alt: "Trabajo 6" },
-    { src: "/images/catalog/work/7.jpg", alt: "Trabajo 7" },
-    { src: "/images/catalog/work/8.jpg", alt: "Trabajo 8" },
-    { src: "/images/catalog/work/9.jpg", alt: "Trabajo 9" },
-    { src: "/images/catalog/work/10.jpg", alt: "Trabajo 10" },
+const navidad = import.meta.glob('../../assets/images/catalog/xmas/*.{jpg,jfif}', { eager: true });
+const halloween = import.meta.glob('../../assets/images/catalog/halloween/*.{jpg,jfif}', { eager: true });
+const salud = import.meta.glob('../../assets/images/catalog/health/*.jpg', { eager: true });
+const trabajo = import.meta.glob('../../assets/images/catalog/work/*.jpg', { eager: true });
 
-  ],
+function transformar(archivos, etiqueta) {
+  return Object.entries(archivos)
+    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+    .map(([_, mod], idx) => ({
+      src: mod.default,
+      alt: `${etiqueta} ${idx + 1}`,
+    }));
+}
+
+export const imagenes = {
+  navidad: transformar(navidad, 'Navidad'),
+  halloween: transformar(halloween, 'Halloween'),
+  salud: transformar(salud, 'Salud'),
+  trabajo: transformar(trabajo, 'Trabajo'),
 };

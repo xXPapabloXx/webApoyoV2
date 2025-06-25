@@ -1,9 +1,10 @@
+import polo from "../../assets/models/clothes/Polo-draco.glb";
 export const clothingOptions = {
   prendas_superiores: [
     {
       id: "polo",
       label: "Polo",
-      modelPath: "/models/clothes/Polo-draco.glb",
+      modelPath: {polo},
       position: [0, 0, 0],
       rotation: [0, 0, 0],
       scale: [1, 1, 1],

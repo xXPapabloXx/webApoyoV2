@@ -8,7 +8,6 @@ import Contact from "./pages/Contact";
 import NavBar from "./components/template/NavBar";
 import Footer from "./components/template/Footer";
 import LogServices from "./pages/LogServices";
-import Confect from "./pages/Confect";
 import Blog from "./pages/Blog";
 
 function App() {
@@ -28,8 +27,6 @@ function App() {
         return <Contact key="contact" />;
       case "log_services":
         return <LogServices key="log_services" />;
-      case "confect":
-        return <Confect key="confect" />;
       case "blog":
         return <Blog key="blog" />;
       default:

@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { cargarImagenDesdeRuta } from "./content";
 
 const SubLogServTrans = ({ contenido }) => {
+  const [imagenes, setImagenes] = useState({});
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleClick = (route) => {
-    setSelectedImage(`/images/${route}.jpg`);
+  useEffect(() => {
+    const cargar = async () => {
+      const nuevas = {};
+      for (const ruta of contenido.routes) {
+        const img = await cargarImagenDesdeRuta(ruta);
+        if (img) nuevas[ruta] = img;
+      }
+      setImagenes(nuevas);
+    };
+    cargar();
+  }, [contenido]);
+
+  const handleClick = (ruta) => {
+    setSelectedImage(imagenes[ruta]);
   };
 
   const closeModal = () => setSelectedImage(null);
@@ -35,14 +49,17 @@ const SubLogServTrans = ({ contenido }) => {
             className="shadow-md shadow-amber-300/80 cursor-pointer rounded-xl overflow-hidden"
             onClick={() => handleClick(route)}
           >
-            <img
-              src={`/images/${route}.jpg`}
-              alt={route}
-              className="w-full h-64 object-cover"
-            />
+            {imagenes[route] && (
+              <img
+                src={imagenes[route]}
+                alt={route}
+                className="w-full h-64 object-cover"
+              />
+            )}
           </motion.button>
         ))}
       </div>
+
       <AnimatePresence>
         {selectedImage && (
           <motion.div

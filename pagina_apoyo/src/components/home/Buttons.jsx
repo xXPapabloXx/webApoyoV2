@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import ButtonRender from "../ButtonRender";
 import pale from "../../assets/models/serv_log-draco.glb"
-import sewing from "../../assets/models/sewings-draco.glb"
 import contact from "../../assets/models/Contact-draco.glb"
 
 const Buttons = ({ setCurrentView }) => {
@@ -11,7 +10,7 @@ const Buttons = ({ setCurrentView }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-8 py-6"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-4 md:px-8 py-6"
     >
       <ButtonRender
         setCurrentView={setCurrentView}
@@ -20,15 +19,6 @@ const Buttons = ({ setCurrentView }) => {
         rotation={[0, Math.PI / 1.6, Math.PI / 40]}
         rotates={false}
         text={"Servicios Logísticos"}
-      />
-      <ButtonRender
-        setCurrentView={setCurrentView}
-        view={"confect"}
-        modelPath={sewing}
-        rotation={[0, Math.PI * 0.18, Math.PI * 0.012]}
-        rotates={false}
-        scale={[0.85, 0.85, 0.85]}
-        text={"Confección"}
       />
       <ButtonRender
         setCurrentView={setCurrentView}

@@ -1,6 +1,7 @@
 import React from "react";
 import ModelRender from "../../util/3D/ModelRender";
 import { motion } from "framer-motion";
+import certificate from "../../assets/models/Certificate-draco.glb"
 
 const ButonRenderLink = ({ text, url }) => {
   return (
@@ -19,7 +20,7 @@ const ButonRenderLink = ({ text, url }) => {
         className="w-full h-full shadow shadow-purple-500 rounded-2xl cursor-pointer"
       >
         <ModelRender
-          modelPath={"/models/Certificate-draco.glb"}
+          modelPath={certificate}
           rotation={[Math.PI / 2, 0, 0]}
           rotates={true}
           scale={[1.2, 1.2, 1.2]}

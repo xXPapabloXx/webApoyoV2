@@ -1,4 +1,4 @@
-const content = {
+export const content = {
   recepcion: {
     title: "Recepción / Despacho de mercancía",
     text: "Gestionamos la llegada/salida de productos, verificando su integridad, y registrando el ingreso/salida al sistema logístico.",
@@ -17,3 +17,14 @@ const content = {
 };
 
 export default content;
+
+const imagenes = import.meta.glob('../../../../assets/images/**/*.jpg');
+
+export async function cargarImagenDesdeRuta(relPath) {
+  const match = Object.entries(imagenes).find(([key]) =>
+    key.includes(relPath)
+  );
+  if (!match) return null;
+  const mod = await match[1]();
+  return mod.default;
+}

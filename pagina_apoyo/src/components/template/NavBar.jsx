@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 const navItems = [
   ["Inicio", "home"],
   ["Logística", "log_services"],
-  ["Confección", "confect"],
   ["Quienes somos", "about"],
   ["Contacto", "contact"],
   ["Blog", "blog"],
