@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Bounds, Center, OrbitControls } from "@react-three/drei";
 import IsolatedModel from "./IsolatedModel";
 
+
 function RotatingModel({ modelPath, scale, rotation }) {
   const modelRef = useRef();
   useFrame(({ clock }) => {

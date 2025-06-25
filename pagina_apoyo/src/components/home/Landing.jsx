@@ -1,6 +1,7 @@
 import React from "react";
 import ModelRender from "../../util/3D/ModelRender";
 import { motion } from "framer-motion";
+import modeloLogo from "../../assets/models/Logo-draco.glb"
 
 const Landing = () => {
   return (
@@ -13,7 +14,7 @@ const Landing = () => {
       >
         <div className="w-full max-w-md h-64 md:h-72">
           <ModelRender
-            modelPath={"/models/Logo-draco.glb"}
+            modelPath={modeloLogo}
             rotation={[0, -Math.PI / 2, 0]}
             rotates={true}
             scale={[1.5, 1.5, 1.5]}

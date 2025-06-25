@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ButtonRender from "../ButtonRender";
+import pale from "../../assets/models/serv_log-draco.glb"
+import sewing from "../../assets/models/sewings-draco.glb"
+import contact from "../../assets/models/Contact-draco.glb"
 
 const Buttons = ({ setCurrentView }) => {
   return (
@@ -13,7 +16,7 @@ const Buttons = ({ setCurrentView }) => {
       <ButtonRender
         setCurrentView={setCurrentView}
         view={"log_services"}
-        modelPath="/models/serv_log-draco.glb"
+        modelPath={pale}
         rotation={[0, Math.PI / 1.6, Math.PI / 40]}
         rotates={false}
         text={"Servicios Logísticos"}
@@ -21,7 +24,7 @@ const Buttons = ({ setCurrentView }) => {
       <ButtonRender
         setCurrentView={setCurrentView}
         view={"confect"}
-        modelPath="/models/sewings-draco.glb"
+        modelPath={sewing}
         rotation={[0, Math.PI * 0.18, Math.PI * 0.012]}
         rotates={false}
         scale={[0.85, 0.85, 0.85]}
@@ -30,7 +33,7 @@ const Buttons = ({ setCurrentView }) => {
       <ButtonRender
         setCurrentView={setCurrentView}
         view={"contact"}
-        modelPath="/models/Contact-draco.glb"
+        modelPath={contact}
         rotation={[0, -Math.PI / 2, Math.PI / 2]}
         rotates={false}
         scale={[1.3, 1.3, 1.3]}

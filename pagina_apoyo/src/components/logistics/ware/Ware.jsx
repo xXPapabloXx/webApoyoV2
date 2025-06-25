@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { simples, desplegables } from "./content";
 import ItemCard from "./ItemCard";
 import {
