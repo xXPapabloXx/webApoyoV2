@@ -26,15 +26,4 @@ body, html{
   background-color: #FDFBEE; 
 }
 
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 7px #10b981, 0 0 14px #10b981, 0 0 21px #10b981;
-  }
-  50% {
-    box-shadow: 0 0 3px #10b981, 0 0 6px #10b981, 0 0 9px #10b981;
-  }
-}
 
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
-}
