@@ -1,6 +1,4 @@
-import ModelRender from "../../util/3D/ModelRender";
 import { motion } from "framer-motion";
-import modeloLogo from "../../assets/models/Logo-draco.glb";
 import logo from "../../assets/images/general/logo.png";
 import montacarga from "../../assets/images/general/montacarga.png";
 
