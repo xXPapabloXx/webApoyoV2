@@ -17,7 +17,7 @@ const ButonRenderLink = ({ text, url }) => {
         transition={{ duration: 0.3 }}
         className="w-full h-full shadow-inner shadow-complemento rounded-2xl cursor-pointer"
       >
-        <img src={certificado} alt="certificate"/>
+        <img src={certificado} alt="certificate" className="w-2/3 mx-auto mb-3 sm:w-full"/>
         <h2 className="text-center text-texto font-semibold text-2xl shadow shadow-acento rounded-md p-2 pt-3">
           {text}
         </h2>
