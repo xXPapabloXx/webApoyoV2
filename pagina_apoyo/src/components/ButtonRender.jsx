@@ -32,7 +32,7 @@ const ButtonRender = ({
           rotates={rotates}
         />
       </div>
-      <h1 className="text-white text-2xl mb-3 pt-2 pb-2  shadow shadow-sky-500 w-1/2 ml-auto mr-auto ">
+      <h1 className="text-texto text-2xl mb-3 pt-2 pb-2  shadow shadow-primario w-1/2 ml-auto mr-auto ">
         {text}
       </h1>
     </motion.button>

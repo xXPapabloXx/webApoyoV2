@@ -29,13 +29,13 @@ const SubLogServTrans = ({ contenido }) => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className="text-white rounded-xl shadow-md p-6 mx-auto"
+      className="rounded-xl shadow-md p-6 mx-auto bg-gradient-to-b "
     >
-      <h2 className="text-xl font-bold mb-4 text-center shadow shadow-amber-300/60 w-1/2 mx-auto">
+      <h2 className="text-2xl font-bold mb-4 text-center shadow shadow-complemento/80 bg-complemento/20 w-1/2 mx-auto">
         {contenido.title}
       </h2>
 
-      <p className="text-lg text-center mb-6 text-gray-200">{contenido.text}</p>
+      <p className="shadow shadow-complemento text-lg text-center mb-6 bg-complemento/8 w-2/3 mx-auto p-2">{contenido.text}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {contenido.routes.map((route) => (
@@ -46,7 +46,7 @@ const SubLogServTrans = ({ contenido }) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25 }}
-            className="shadow-md shadow-amber-300/80 cursor-pointer rounded-xl overflow-hidden"
+            className="shadow-md shadow-secundario/80 cursor-pointer rounded-xl overflow-hidden"
             onClick={() => handleClick(route)}
           >
             {imagenes[route] && (
@@ -63,14 +63,14 @@ const SubLogServTrans = ({ contenido }) => {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-secundario/50 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
           >
             <motion.div
-              className="bg-slate-900 shadow shadow-amber-300 p-4 rounded-xl max-w-3xl w-full"
+              className="bg-secundario shadow shadow-secundario p-4 rounded-xl max-w-3xl w-full"
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
@@ -82,7 +82,7 @@ const SubLogServTrans = ({ contenido }) => {
                 className="w-full h-96 rounded object-cover"
               />
               <button
-                className="mt-4 w-1/4 shadow shadow-amber-300/60 text-white px-4 py-2 rounded hover:bg-amber-300/30 mx-auto block"
+                className="text-complemento bg-primario mt-4 w-1/4 shadow shadow-acento/60  px-4 py-2 rounded hover:bg-acento/30 mx-auto block"
                 onClick={closeModal}
               >
                 Cerrar

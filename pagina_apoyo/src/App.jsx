@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-stone-950 to-slate-800 ">
+    <div className="min-h-screen bg-fondo">
       <NavBar onSelect={setCurrentView} currentView={currentView} />
       <AnimatePresence mode="wait">
         <motion.div

@@ -1,4 +1,3 @@
-import React from "react";
 import ModelRender from "../../util/3D/ModelRender";
 import { motion } from "framer-motion";
 import modeloLogo from "../../assets/models/Logo-draco.glb"
@@ -7,7 +6,7 @@ const Landing = () => {
   return (
     <div className="w-full mb-6">
       <motion.div
-        className="flex flex-col justify-center items-center text-white min-h-[28rem] px-4 pt-10 md:pt-16"
+        className="flex flex-col justify-center items-center text-texto min-h-[28rem] px-4 pt-10 md:pt-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -24,7 +23,7 @@ const Landing = () => {
         <h1 className="text-3xl md:text-5xl font-bold mb-2 text-center">
           Apoyo Logístico ZF S.A.S
         </h1>
-        <p className="text-lg md:text-2xl text-slate-50 font-semibold text-center">
+        <p className="text-lg md:text-2xl font-semibold text-center">
           Proveedor de servicios logísticos
         </p>
       </motion.div>

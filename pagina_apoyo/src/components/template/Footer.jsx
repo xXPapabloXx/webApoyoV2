@@ -6,7 +6,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full p-4 text-center text-sky-50 bg-stone-950 backdrop-blur-md shadow-inner shadow-gray-700"
+      className="w-full p-4 text-center text-texto  shadow-inner shadow-secundario"
     >
       © 2025 Todos los derechos reservados.
     </motion.footer>
