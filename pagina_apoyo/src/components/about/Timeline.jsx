@@ -21,12 +21,12 @@ const timelineData = [
 
 export default function Timeline() {
   return (
-    <div className="relative  text-white pt-10 px-4 md:px-16 pb-4">
-      <div className="w-1/2 text-4xl mb-8 text-center mx-auto font-bold shadow shadow-purple-500">
+    <div className="relative  text-texto pt-10 px-4 md:px-16 pb-4">
+      <div className="w-1/2 text-4xl mb-8 text-center mx-auto font-bold shadow shadow-acento bg-complemento/10">
         Nuestra Historia
       </div>
 
-      <div className="flex flex-col gap-15 relative z-10">
+      <div className="flex flex-col gap-15 relative z-10 w-full bg-gradient-to-b from-0% via-secundario/10 to-100% rounded-2xl">
         {timelineData.map(({ year, text }, index) => {
           const alignLeft = index % 2 === 0;
           return (
@@ -38,14 +38,9 @@ export default function Timeline() {
             >
               <div className="m-auto flex justify-center">
                 <div
-                  className={`text-6xl font-black mb-2 inline-block drop-shadow-sm ${
-                    [
-                      "text-purple-300",
-                      "text-purple-400",
-                      "text-purple-500",
-                      "text-purple-600",
-                    ][index] || "text-purple-700"
-                  }`}
+                  className={`text-8xl font-extrabold mb-2 bg-white/30 inline-block shadow-inner px-4 shadow-acento ${
+                    index % 2 == 0 ? "rounded-r-4xl" : "rounded-l-4xl"
+                  }  text-texto`}
                 >
                   {year}
                 </div>
@@ -56,7 +51,7 @@ export default function Timeline() {
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="origin-center w-24 h-1 m-auto bg-purple-500 rounded-full"
+                className="origin-center w-24 h-1 m-auto bg-acento shadow shadow-acento rounded-full"
               ></motion.div>
 
               <motion.div
@@ -64,16 +59,9 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className={`w-full md:w-1/2 mx-auto bg-white/10 text-slate-50 backdrop-blur-sm p-6 rounded-xl border-b-4 ${
-                  [
-                    "border-emerald-200",
-                    "border-emerald-300",
-                    "border-emerald-400",
-                    "border-emerald-500",
-                  ][index] || "border-emerald-600"
-                } shadow-[inset_0_-4px_10px_rgba(5,150,105,0.2)]`}
+                className={`w-full md:w-1/2 mx-auto shadow-inner shadow-complemento text-texto p-6 rounded-xl`}
               >
-                <p className="text-sm leading-relaxed text-justify">{text}</p>
+                <p className="text-xl font-serif font-semibold text-justify">{text}</p>
               </motion.div>
             </div>
           );
