@@ -1,8 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
 import ButtonRender from "../ButtonRender";
-import pale from "../../assets/models/serv_log-draco.glb"
-import contact from "../../assets/models/Contact-draco.glb"
+import cajas from "../../assets/images/general/cajas.png"
+import contacto from "../../assets/images/general/contacto.png"
 
 const Buttons = ({ setCurrentView }) => {
   return (
@@ -15,18 +14,13 @@ const Buttons = ({ setCurrentView }) => {
       <ButtonRender
         setCurrentView={setCurrentView}
         view={"log_services"}
-        modelPath={pale}
-        rotation={[0, Math.PI / 1.6, Math.PI / 40]}
-        rotates={false}
+        image={cajas}
         text={"Servicios Logísticos"}
       />
       <ButtonRender
         setCurrentView={setCurrentView}
         view={"contact"}
-        modelPath={contact}
-        rotation={[0, -Math.PI / 2, Math.PI / 2]}
-        rotates={false}
-        scale={[1.3, 1.3, 1.3]}
+        image={contacto}
         text={"Contacto"}
       />
     </motion.div>

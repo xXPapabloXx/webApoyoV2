@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import Landing from "../components/home/Landing";
 import Buttons from "../components/home/Buttons";

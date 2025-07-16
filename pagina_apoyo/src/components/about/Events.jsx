@@ -21,7 +21,7 @@ const Events = () => {
 
   return (
     <div className="mt-8 text-texto px-4 sm:px-6 md:px-10 ">
-      <h1 className="mt-5 text-2xl md:text-3xl text-center font-bold mb-6 pb-2 shadow-md shadow-secundario w-full md:w-1/3 mx-auto rounded">
+      <h1 className="mt-5 text-2xl md:text-3xl text-center font-bold mb-6 p-2 shadow-md shadow-secundario w-full md:w-1/3 mx-auto rounded">
         Actividades
       </h1>
 

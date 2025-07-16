@@ -1,8 +1,6 @@
-import React from "react";
-import ModelRender from "../../util/3D/ModelRender";
 import { motion } from "framer-motion";
-import certificate from "../../assets/models/Certificate-draco.glb"
 
+import certificado from "../../assets/images/general/certificado.png"
 const ButonRenderLink = ({ text, url }) => {
   return (
     <a
@@ -12,19 +10,14 @@ const ButonRenderLink = ({ text, url }) => {
       className="block w-full h-full"
     >
       <motion.button
-        whileHover={{ scale: 1.06, backgroundColor: "rgba(137, 17, 186, 0.3)" }}
+        whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         className="w-full h-full shadow-inner shadow-complemento rounded-2xl cursor-pointer"
       >
-        <ModelRender
-          modelPath={certificate}
-          rotation={[Math.PI / 2, 0, 0]}
-          rotates={true}
-          scale={[1.2, 1.2, 1.2]}
-        />
+        <img src={certificado} alt="certificate"/>
         <h2 className="text-center text-texto font-semibold text-2xl shadow shadow-acento rounded-md p-2 pt-3">
           {text}
         </h2>

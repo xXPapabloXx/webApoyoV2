@@ -1,15 +1,10 @@
-import React from "react";
-import ModelRender from "../util/3D/ModelRender";
 import { motion } from "framer-motion";
 
 const ButtonRender = ({
   setCurrentView,
   view,
   text,
-  modelPath,
-  scale,
-  rotation,
-  rotates,
+ image,
 }) => {
   return (
     <motion.button
@@ -22,17 +17,12 @@ const ButtonRender = ({
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="overflow-x-hidden items-center cursor-pointer "
+      className="overflow-x-hidden items-center cursor-pointer shadow-md shadow-secundario/50 p-4 rounded-3xl"
     >
-      <div className="h-50 bg-radial to-70%">
-        <ModelRender
-          scale={scale}
-          modelPath={modelPath}
-          rotation={rotation}
-          rotates={rotates}
-        />
+      <div className="h-60 bg-radial to-70%">
+        <img src={image} alt={view} className="h-60 object-cover mx-auto"/>
       </div>
-      <h1 className="text-texto text-2xl mb-3 pt-2 pb-2  shadow shadow-primario w-1/2 ml-auto mr-auto ">
+      <h1 className="text-texto text-2xl mb-3 p-2 mt-2 font-bold  shadow-md shadow-primario w-1/2 ml-auto mr-auto ">
         {text}
       </h1>
     </motion.button>
