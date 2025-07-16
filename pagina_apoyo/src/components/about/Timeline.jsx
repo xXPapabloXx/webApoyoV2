@@ -22,7 +22,7 @@ const timelineData = [
 export default function Timeline() {
   return (
     <div className="relative  text-texto pt-10 px-4 md:px-16 pb-4">
-      <div className="w-1/2 text-4xl mb-8 text-center mx-auto font-bold shadow shadow-acento bg-complemento/10">
+      <div className="w-1/2 text-4xl mb-8 text-center mx-auto font-bold shadow-md shadow-secundario">
         Nuestra Historia
       </div>
 

@@ -43,7 +43,7 @@ export default function LogisticWare() {
 
   return (
     <div className="w-full bg-gradient-to-t from-0% to-secundario/25 pt-6 pb-10 px-4 text-texto">
-      <h1 className="text-2xl md:text-3xl text-center mx-auto mb-6 p-2 shadow shadow-acento bg-acento/10 font-bold rounded-md w-full md:w-1/2">
+      <h1 className="text-2xl md:text-3xl text-center mx-auto mb-6 p-2 shadow-md shadow-secundario font-bold rounded-md w-full md:w-1/2">
         Manejo de mercancía
       </h1>
 

@@ -17,7 +17,7 @@ const ButonRenderLink = ({ text, url }) => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="w-full h-full shadow shadow-purple-500 rounded-2xl cursor-pointer"
+        className="w-full h-full shadow-inner shadow-complemento rounded-2xl cursor-pointer"
       >
         <ModelRender
           modelPath={certificate}
@@ -25,7 +25,7 @@ const ButonRenderLink = ({ text, url }) => {
           rotates={true}
           scale={[1.2, 1.2, 1.2]}
         />
-        <h2 className="text-center text-white text-2xl shadow shadow-purple-500 rounded-md p-2 pt-3">
+        <h2 className="text-center text-texto font-semibold text-2xl shadow shadow-acento rounded-md p-2 pt-3">
           {text}
         </h2>
       </motion.button>

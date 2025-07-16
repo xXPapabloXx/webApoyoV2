@@ -11,7 +11,7 @@ const CurrentNorm = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <h1 className="text-white text-2xl md:text-3xl text-center mb-8 p-2 w-full md:w-1/3 mx-auto shadow shadow-purple-500 rounded-md">
+      <h1 className="text-texto font-bold text-2xl md:text-3xl text-center mb-8 p-2 w-full md:w-1/3 mx-auto shadow-md shadow-secundario rounded-md">
         Normatividad Actual
       </h1>
 

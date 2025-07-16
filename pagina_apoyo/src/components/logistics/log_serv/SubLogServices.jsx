@@ -26,7 +26,7 @@ const SubLogServices = () => {
   let [selectedKey, setSelectedKey] = useState("rep");
   return (
     <div className="w-full bg-gradient-to-b from-0% to-secundario/25 justify-center pt-3 text-texto">
-      <h1 className="text-3xl w-1/3 ml-auto mr-auto text-center shadow shadow-acento bg-acento/8 pb-1 mb-2 font-bold">
+      <h1 className="text-3xl w-1/3 ml-auto mr-auto text-center shadow-md shadow-secundario  pb-1 mb-4 font-bold">
         Servicios Logísticos
       </h1>
 
